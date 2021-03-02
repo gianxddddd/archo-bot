@@ -216,6 +216,8 @@ async def on_message(message):
                       , "Learning Math also improves your programming knowledge."
                       , "Java/XML/Kotlin/Groove/C++ are the only programming languages you can create an Android application."
                       , "Linux is preferred as the programming-like Operating System and is 25% faster than Windows."
+                      , "There are over 700 different programming languages!"
+                      , "Python is the most popular language."
                       ]
         embed = discord.Embed(color=0x03a9f4)
         embed.add_field(name="Coding Facts", value=random.choice(codingfacts), inline=False)
