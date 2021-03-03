@@ -152,7 +152,7 @@ async def on_message(message):
             embed5.add_field(name="Error", value="You are not in a voice channel.", inline=True)
             await message.channel.send(embed = embed5)
 
-    if message.content.startswith('ar.resume'):
+    if message.content.startswith('ar.resume') or message.content.startswith('ar.res'):
         if discord.voice.is_connected():
             if discord.voice.is_paused():
                 discord.voice.resume()
@@ -176,7 +176,7 @@ async def on_message(message):
             embed2.add_field(name="Error", value="The bot is not in the voice channel you are currently in.", inline=True)
             await message.channel.send(embed = embed2)
 
-    if message.content.startswith('ar.stop'):
+    if message.content.startswith('ar.stop') or message.content.startswith('ar.s'):
         if discord.voice.is_connected():
             if discord.voice.is_paused() or discord.voice.is_playing():
                 discord.voice.stop()
@@ -214,7 +214,7 @@ async def on_message(message):
                       , "IDEs can cause high memory usage, reduce it by using the manuals."
                       , "Sketchware is a code-block android application which creates a real Android application."
                       , "Learning Math also improves your programming knowledge."
-                      , "Java/XML/Kotlin/Groove/C++ are the only programming languages you can create an Android application."
+                      , "Java/XML/Kotlin/Groove/C++ are the only programming languages you can create an Android application with."
                       , "Linux is preferred as the programming-like Operating System and is 25% faster than Windows."
                       , "There are over 700 different programming languages!"
                       , "Python is one of the most popular programming language."
@@ -234,6 +234,7 @@ async def on_message(message):
                     , "Uhhh... You are a leaf."
                     , "I am tired, make a request to identify later."
                     , "☌⍀⟒⟒⏁⟟⋏☌⌇ ⎎⍀⍜⋔ ⟒⏃⍀⏁⊑, ⊬⍜⎍ ⏃⍀⟒ ⏃⋏ ⏃⌰⟟⟒⋏."
+                    , "What the $#@! You're a ghost. <:doggo_cheems:737772621751517345>"
                     ]
         await message.channel.send(random.choice(identification))
         
@@ -268,6 +269,11 @@ async def on_message(message):
 
     if message.content.startswith('ar.pytools'):
        print('https://cog-creators.github.io/discord-embed-sandbox/')
+    
+    #Work Commands(Like dank memer)
+    if message.content == 'ar.work' or message.content == 'ar.w':
+        embed = discord.Embed(color=0x03a9f4)
+        embed.add_field(name="Money earned by work",value="")
     
     
 client.run(token)
