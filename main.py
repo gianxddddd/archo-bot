@@ -2,6 +2,7 @@ import asyncio
 import discord
 import os
 import random
+from random import *
 import youtube_dl
 
 client = discord.Client()
@@ -273,7 +274,7 @@ async def on_message(message):
     #Work Commands(Like dank memer)
     if message.content == 'ar.work' or message.content == 'ar.w':
         embed = discord.Embed(color=0x03a9f4)
-        embed.add_field(name="Money earned by work",value="")
+        embed.add_field(name="Money earned by work", value=randint(1, 100))
     
     
 client.run(token)
