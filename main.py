@@ -66,7 +66,7 @@ async def on_message(message):
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/805357950221942794/816279533920714752/20210227_221617.png")
         embed.add_field(name=":information_source: Version", value="v7.18py", inline=False)
         embed.add_field(name=":technologist: Creator", value="GianXD", inline=False)
-        embed.add_field(name=":broom: Maintainer", "Pranav", inline=False)
+        embed.add_field(name=":broom: Maintainer", value="Pranav", inline=False)
         embed.set_footer(text=f"Command issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
 
