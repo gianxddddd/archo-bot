@@ -2,7 +2,6 @@ import asyncio
 import discord
 import os
 import random
-from random import *
 import youtube_dl
 
 client = discord.Client()
@@ -22,7 +21,7 @@ async def on_message(message):
     # General bot commands
     
     if message.content.startswith('ar.welcome'):
-        embed=discord.Embed(title="Archo", description="Hi, I am Archo Music! Type `ar.help` for more commands.", color=0x03a9f4)
+        embed=discord.Embed(title="Archo", description="Hi, I am Archo! Type `ar.help` for more commands.", color=0x03a9f4)
         embed.add_field(name="Install Archo Music on Android:", value="https://bit.ly/3aQr3In", inline=False)
         embed.add_field(name="Follow the developer on Twitter:", value="https://twitter.com/GianXDDDDD", inline=False)
         embed.set_footer(text=f"Command issued by {message.author} - Archo")
@@ -30,17 +29,17 @@ async def on_message(message):
         
     if message.content.startswith('ar.invite'):
         embed = discord.Embed(title="Archo", color=0x03a9f4)
-        embed.add_field(name="Invite the bot in this link:", value="https://bit.ly/3a0yVba", inline=False)
+        embed.add_field(name="Invite the bot in this link:", value="https://bit.ly/2MUkD3i", inline=False)
         embed.set_footer(text=f"Command issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
 
     if message.content.startswith('ar.help'):
         embed = discord.Embed(title="Help", description="Here are the commands you can interact with Archo:", color=0x03a9f4)
-        embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/806755097140789270/21c72a059897ae0ff2fd9928b3bbe633.webp?size=1024")
-        embed.add_field(name="General", value="`ar.welcome, ar.help, ar.invite, ar.status, ar.about`", inline=False)
-        embed.add_field(name="Music", value="`ar.play <url>, ar.download <url>, ar.pause, ar.resume, ar.stop, ar.connect, ar.disconnect`", inline=False)
-        embed.add_field(name="Fun", value="`ar.codefacts, ar.secretmsg <message>, ar.die, ar.megadie ar.supermegadie, ar.supermegabunchdoperhuntadie, ar.pog, ar.hoomancheck, ar.aaa`", inline=False)
-        embed.add_field(name="Misc", value="`ar.android`", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/805357950221942794/816279533920714752/20210227_221617.png")
+        embed.add_field(name=":speech_balloon: General", value="`ar.welcome, ar.help, ar.invite, ar.status, ar.about`", inline=False)
+        embed.add_field(name=":musical_note: Music", value="`ar.play <url>, ar.download <url>, ar.pause, ar.resume, ar.stop, ar.connect, ar.disconnect`", inline=False)
+        embed.add_field(name=":rofl: Fun", value="`ar.codefacts, ar.secretmsg <message>, ar.die, ar.megadie ar.supermegadie, ar.supermegabunchdoperhuntadie, ar.pog, ar.hoomancheck, ar.aaa`", inline=False)
+        embed.add_field(name=":sus: Misc", value="`ar.music.app`", inline=False)
         embed.set_footer(text=f"Command Issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
         
@@ -51,26 +50,27 @@ async def on_message(message):
                    , "Watching Netflix with my bot girlfriend."
                    , "Playing Minecraft."
                    , "Are ya winning son?"
-                   , "Online"
+                   , "gianxddddd.aternos.me :sus:"
                    ]
         embed = discord.Embed(title="Bot Status", color=0x03a9f4)
-        embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/806755097140789270/21c72a059897ae0ff2fd9928b3bbe633.webp?size=1024")
-        embed.add_field(name="Active Status", value=random.choice(statuses), inline=False)
-        embed.add_field(name="Latency", value=f"{str(round((client.latency) * 1000))} ms", inline=False)
-        embed.add_field(name="Joined Servers", value=f"{str(len(client.guilds))} servers", inline=False)
-        embed.add_field(name="Bot Prefix", value="`ar.<command>`", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/805357950221942794/816279533920714752/20210227_221617.png")
+        embed.add_field(name=":green_circle: Active Status", value=random.choice(statuses), inline=False)
+        embed.add_field(name=":signal_strength: Latency", value=f"{str(round((client.latency) * 1000))} ms", inline=False)
+        embed.add_field(name=":flag_white: Joined Servers", value=f"{str(len(client.guilds))} servers", inline=False)
+        embed.add_field(name=":robot: Bot Prefix", value="`ar.<command>`", inline=False)
         embed.set_footer(text=f"Command issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
         
     if message.content.startswith('ar.about') or message.content.startswith('ar.info') or message.content.startswith('ar.information'):
         embed = discord.Embed(title="About & Information", description="Archo is a Discord bot rewritten and based on Archo Music discord bot.")
-        embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/806755097140789270/21c72a059897ae0ff2fd9928b3bbe633.webp?size=1024")
-        embed.add_field(name="Version", value="v7.16py", inline=False)
-        embed.add_field(name="Developer and Creator ", value="GianXD", inline=False)
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/805357950221942794/816279533920714752/20210227_221617.png")
+        embed.add_field(name=":information_source: Version", value="v7.18py", inline=False)
+        embed.add_field(name=":technologist: Creator", value="GianXD", inline=False)
+        embed.add_field(name=":broom: Maintainer", "Pranav", inline=False)
         embed.set_footer(text=f"Command issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
 
-    # Music bot commands
+    # Music Commands
      
     if message.content.startswith('ar.connect') or message.content.startswith('ar.join'):
         if message.author.voice is None:
@@ -186,8 +186,8 @@ async def on_message(message):
         embed = discord.Embed(color=0x03a9f4)
         embed.add_field(name="Error", value="Command unavailable. <:doggo_cheems:737772621751517345>", inline=False)
         await message.channel.send(embed = embed)
-            
-    # Fun bot commands
+        
+    # Fun Commands
     
     if message.content.startswith('ar.die'):
         await message.channel.send('NO U')
@@ -235,7 +235,7 @@ async def on_message(message):
                     , "Uhhh... You are a leaf."
                     , "I am tired, make a request to identify later."
                     , "☌⍀⟒⟒⏁⟟⋏☌⌇ ⎎⍀⍜⋔ ⟒⏃⍀⏁⊑, ⊬⍜⎍ ⏃⍀⟒ ⏃⋏ ⏃⌰⟟⟒⋏."
-                    , "What the $#@! You're a ghost. <:doggo_cheems:737772621751517345>"
+                    , "What the $#@! You're a ghost."
                     ]
         await message.channel.send(random.choice(identification))
         
@@ -254,7 +254,7 @@ async def on_message(message):
         
     # Archo Apps Commands
     
-    if message.content.startswith('ar.android'):
+    if message.content.startswith('ar.music.app'):
         embed = discord.Embed(title="Archo", color=0x03a9f4)
         embed.add_field(name="Download Archo Music from Sketchub:", value="https://project.sketchub.in/?id=403", inline=False)
         embed.add_field(name="or from Github:", value="https://github.com/gianxddddd/archo-music/releases/download/v5.17/Archo_Music.apk", inline=False)
@@ -270,13 +270,6 @@ async def on_message(message):
 
     if message.content.startswith('ar.pytools'):
        print('https://cog-creators.github.io/discord-embed-sandbox/')
-    
-    #Work Commands(Like dank memer)
-    if message.content == 'ar.work' or message.content == 'ar.w':
-        embed = discord.Embed(color=0x03a9f4)
-        earn = randint(1, 500) 
-        embed.add_field(name="Money earned by work", value=str(earn)) 
-        total earn = total earn+earn
     
     
 client.run(token)
