@@ -39,7 +39,7 @@ async def on_message(message):
         embed.add_field(name=":speech_balloon: General", value="`ar.welcome, ar.help, ar.invite, ar.status, ar.about`", inline=False)
         embed.add_field(name=":musical_note: Music", value="`ar.play <url>, ar.download <url>, ar.pause, ar.resume, ar.stop, ar.connect, ar.disconnect`", inline=False)
         embed.add_field(name=":rofl: Fun", value="`ar.codefacts, ar.secretmsg <message>, ar.die, ar.megadie ar.supermegadie, ar.supermegabunchdoperhuntadie, ar.pog, ar.hoomancheck, ar.aaa`", inline=False)
-        embed.add_field(name=":sus: Misc", value="`ar.music.app`", inline=False)
+        embed.add_field(name="<:sus:807092771806248990> Misc", value="`ar.music.app`", inline=False)
         embed.set_footer(text=f"Command Issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
         
