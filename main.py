@@ -119,7 +119,8 @@ async def on_message(message):
                 if discord.voice.is_connected():
                     await message.guild.voice_client.move_to(message.author.voice.channel)
             except AttributeError:
-                discord.voice = await message.author.voice.channel.connect()
+                if discord.voice == None:
+                    discord.voice = await message.author.voice.channel.connect()
             if discord.voice.is_playing():
                 discord.voice.stop()
                 if message.content[8:].startswith('http://www.youtube.com') or message.content[8:].startswith('https://www.youtube.com') or message.content[8:].startswith('http://youtu.be') or message.content[8:].startswith('https://youtu.be') or message.content[8:].startswith('http://m.youtube.com') or message.content[8:].startswith('https://www.m.youtube.com'):
