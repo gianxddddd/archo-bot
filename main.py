@@ -119,7 +119,7 @@ async def on_message(message):
                 if discord.voice.is_connected():
                     await message.guild.voice_client.move_to(message.author.voice.channel)
             except AttributeError:
-                if discord.voice == None:
+                if 
                     discord.voice = await message.author.voice.channel.connect()
             if discord.voice.is_playing():
                 discord.voice.stop()
