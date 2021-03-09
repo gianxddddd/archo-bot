@@ -21,15 +21,16 @@ async def on_message(message):
     # General bot commands
     
     if message.content.startswith('ar.welcome'):
-        embed=discord.Embed(title="Archo", description="Hi, I am Archo! Type `ar.help` for more commands.", color=0x03a9f4)
-        embed.add_field(name="Install Archo Music on Android:", value="https://bit.ly/3aQr3In", inline=False)
+        embed = discord.Embed(title="Archo", description="Hi, I am Archo! Type `ar.help` for more commands.", color=0x03a9f4)
+        embed.add_field(name="Join our Discord server:", value="https://discord.gg/x5t9n9fWCV", inline=False)
         embed.add_field(name="Follow the developer on Twitter:", value="https://twitter.com/GianXDDDDD", inline=False)
         embed.set_footer(text=f"Command issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
         
-    if message.content.startswith('ar.invite'):
-        embed = discord.Embed(title="Archo", color=0x03a9f4)
-        embed.add_field(name="Invite the bot in this link:", value="https://bit.ly/2MUkD3i", inline=False)
+    if message.content.startswith('ar.invite') or message.content.startswith('ar.invites'):
+        embed = discord.Embed(title="Invite Links", color=0x03a9f4)
+        embed.add_field(name=":robot: Bot Invitation:", value="https://bit.ly/2MUkD3i", inline=False)
+        embed.add_field(name="<:archo_bot:817292777673981982> Discord server invitation:", value="https://bit.ly/2OydndU", inline=False)
         embed.set_footer(text=f"Command issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
 
@@ -38,7 +39,7 @@ async def on_message(message):
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/805357950221942794/816279533920714752/20210227_221617.png")
         embed.add_field(name=":speech_balloon: General", value="`ar.welcome, ar.help, ar.invite, ar.status, ar.about`", inline=False)
         embed.add_field(name=":musical_note: Music", value="`ar.play <url>, ar.download <url>, ar.pause, ar.resume, ar.stop, ar.connect, ar.disconnect`", inline=False)
-        embed.add_field(name=":rofl: Fun", value="`ar.codefacts, ar.secretmsg <message>, ar.die, ar.megadie ar.supermegadie, ar.supermegabunchdoperhuntadie, ar.pog, ar.hoomancheck, ar.aaa`", inline=False)
+        embed.add_field(name=":rofl: Fun", value="`ar.codefacts, ar.secretmsg <message>, ar.die, ar.megadie ar.supermegadie, ar.supermegabunchdoperhuntadie, ar.pog, ar.hoomancheck`", inline=False)
         embed.add_field(name="<:sus:807092771806248990> Misc", value="`ar.music.app`", inline=False)
         embed.set_footer(text=f"Command Issued by {message.author} - Archo")
         await message.channel.send(embed = embed)
@@ -124,7 +125,7 @@ async def on_message(message):
                 if message.content[8:].startswith('http://www.youtube.com') or message.content[8:].startswith('https://www.youtube.com') or message.content[8:].startswith('http://youtu.be') or message.content[8:].startswith('https://youtu.be') or message.content[8:].startswith('http://m.youtube.com') or message.content[8:].startswith('https://www.m.youtube.com'):
                     if message.content[8:].endswith('start_radio=1'):
                         embed2 = discord.Embed(color=0x03a9f4)
-                        embed2.add_field(name="Error", value="Cannot retrieve a playlist. <:doggo_cheems:737772621751517345>", inline=True)
+                        embed2.add_field(name="Error", value="Cannot retrieve a playlist.", inline=True)
                         await message.channel.send(embed = embed2)
                     else:
                         global queue
@@ -153,7 +154,7 @@ async def on_message(message):
             embed5.add_field(name="Error", value="You are not in a voice channel.", inline=True)
             await message.channel.send(embed = embed5)
 
-    if message.content.startswith('ar.resume') or message.content.startswith('ar.res'):
+    if message.content.startswith('ar.resume'):
         if discord.voice.is_connected():
             if discord.voice.is_paused():
                 discord.voice.resume()
@@ -177,7 +178,7 @@ async def on_message(message):
             embed2.add_field(name="Error", value="The bot is not in the voice channel you are currently in.", inline=True)
             await message.channel.send(embed = embed2)
 
-    if message.content.startswith('ar.stop') or message.content.startswith('ar.s'):
+    if message.content.startswith('ar.stop'):
         if discord.voice.is_connected():
             if discord.voice.is_paused() or discord.voice.is_playing():
                 discord.voice.stop()
@@ -219,6 +220,8 @@ async def on_message(message):
                       , "Linux is preferred as the programming-like Operating System and is 25% faster than Windows."
                       , "There are over 700 different programming languages!"
                       , "Python is one of the most popular programming language."
+                      , "Smart enough, you can compile your project using a Terminal or a Console."
+                      , "Android Studio is the most preferred IDE for beginners."
                       ]
         embed = discord.Embed(color=0x03a9f4)
         embed.add_field(name="Coding Facts", value=random.choice(codingfacts), inline=False)
@@ -236,6 +239,7 @@ async def on_message(message):
                     , "I am tired, make a request to identify later."
                     , "☌⍀⟒⟒⏁⟟⋏☌⌇ ⎎⍀⍜⋔ ⟒⏃⍀⏁⊑, ⊬⍜⎍ ⏃⍀⟒ ⏃⋏ ⏃⌰⟟⟒⋏."
                     , "What the $#@! You're a ghost."
+                    , "UnsatisfiedUser.com"
                     ]
         await message.channel.send(random.choice(identification))
         
@@ -245,12 +249,10 @@ async def on_message(message):
                , "Pog!"
                , "pog-aaugghhh"
                , "Champpog"
+               , "Pog-Pog-Pog"
                , "Pogs-and-Champs!"
                ]
         await message.channel.send(random.choice(pogs))
-        
-    if message.content.startswith('ar.aaa') or message.content.startswith('ar.aa'):
-        await message.channel.send('what?')
         
     # Archo Apps Commands
     
